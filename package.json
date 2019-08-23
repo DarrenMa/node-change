@@ -1,0 +1,24 @@
+{
+  "name": "change",
+  "version": "1.0.0",
+  "description": "Coin change puzzles solved in node js.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarrenMa/node-change.git"
+  },
+  "author": "Darren Ma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarrenMa/node-change/issues"
+  },
+  "homepage": "https://github.com/DarrenMa/node-change#readme",
+  "devDependencies": {
+    "eslint": "^6.2.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
