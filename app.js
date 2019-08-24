@@ -11,8 +11,8 @@ const printArrayLines = false;
     console.log('=== Greedy ===');
     const greedyCombo = await change.greedyChange(amount, coins);
     console.log(`Coins returned for change of ${amount}: `);
-    const x = Object.entries(greedyCombo);
-    x.forEach((arr) => {
+    const arrays = Object.entries(greedyCombo);
+    arrays.forEach((arr) => {
       if (arr[1] > 0) {
         console.log(`${arr[1]} coin of ${arr[0]}`);
       }
