@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const change = require('./change');
 
-const amount = 12;
+const amount = 28;
 const coins = [25, 10, 5, 1];
 const printArrayLines = false;
 
@@ -40,14 +40,6 @@ const printArrayLines = false;
   }
 })();
 
-
-// case 1
-// there is no change needed
-// solution: return nothing
-
-// case 2
-// there are no coins left to give change
-// solution: return nothing (error message)
 
 // case 3
 // there is a negative amount to return

@@ -1,15 +1,20 @@
 /* eslint-disable no-console */
 const utility = require('./utility');
 
+function checkAmount(amount) {
+  if ((!amount && amount !== 0) || amount < 0 || isNaN(amount)) {
+    throw Error(`amount ${amount} is invalid`);
+  }
+}
+
 const arrayToObject = (array) => array.reduce((obj, item) => {
   obj[item] = 0;
   return obj;
 }, {});
 
 module.exports.greedyChange = async function greedyChange(amount, coins) {
+  checkAmount(amount);
   const toGiveBack = arrayToObject(coins);
-
-
   // sort coin array, start from largest coin
   coins.sort((a, b) => b - a);
   await coins.forEach((coin) => {
@@ -23,6 +28,7 @@ module.exports.greedyChange = async function greedyChange(amount, coins) {
 };
 
 module.exports.waysToMakeChange = async function waysToMakeChange(amount, coins, printLines) {
+  checkAmount(amount);
   const combinations = new Array(amount + 1);
   combinations.fill(0);
   combinations[0] = 1;
@@ -40,6 +46,7 @@ module.exports.waysToMakeChange = async function waysToMakeChange(amount, coins,
 };
 
 module.exports.waysToMakeChangeMin = async function waysToMakeChangeMin(amount, coins, printLines) {
+  checkAmount(amount);
   const combinations = new Array(amount + 1);
   combinations.fill(combinations.length);
   combinations[0] = 0;
