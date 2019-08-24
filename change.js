@@ -1,8 +1,9 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-console */
 const utility = require('./utility');
 
 function checkAmount(amount) {
-  if ((!amount && amount !== 0) || amount < 0 || isNaN(amount)) {
+  if ((!amount && amount !== 0) || amount < 0 || Number.isNaN(amount)) {
     throw Error(`amount ${amount} is invalid`);
   }
 }
