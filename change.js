@@ -1,6 +1,27 @@
 /* eslint-disable no-console */
 const utility = require('./utility');
 
+const arrayToObject = (array) => array.reduce((obj, item) => {
+  obj[item] = 0;
+  return obj;
+}, {});
+
+module.exports.greedyChange = async function greedyChange(amount, coins) {
+  const toGiveBack = arrayToObject(coins);
+
+
+  // sort coin array, start from largest coin
+  coins.sort((a, b) => b - a);
+  await coins.forEach((coin) => {
+    while (coin <= amount) {
+      amount -= coin;
+      toGiveBack[coin] += 1;
+    }
+  });
+
+  return toGiveBack;
+};
+
 module.exports.waysToMakeChange = async function waysToMakeChange(amount, coins, printLines) {
   const combinations = new Array(amount + 1);
   combinations.fill(0);
@@ -14,7 +35,6 @@ module.exports.waysToMakeChange = async function waysToMakeChange(amount, coins,
         }
       }
     }
-    console.log('\n');
   });
   return combinations[amount];
 };
@@ -38,7 +58,6 @@ module.exports.waysToMakeChangeMin = async function waysToMakeChangeMin(amount, 
         }
       }
     }
-    console.log('\n');
   });
   return combinations[amount];
 };
